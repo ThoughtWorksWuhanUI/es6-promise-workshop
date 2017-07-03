@@ -1,19 +1,10 @@
-const condition = 'match';
-
-var promise = new Promise(function (resolve, reject) {
-  if (condition === 'match') {
-    resolve('done');
-  } else {
-    reject('been reject');
-  }
+var promise = new Promise(function (resolve) {
+  console.log("inner promise"); // 1
+  resolve(42);
 });
 
 promise.then(function (value) {
-  var messageEle = document.getElementById('message');
-  messageEle.style.color = 'green';
-  messageEle.innerText = value;
-}).catch(function (errorMessage) {
-  var messageEle = document.getElementById('message');
-  messageEle.style.color = 'red';
-  messageEle.innerText = errorMessage;
+  console.log(value); // 3
 });
+
+console.log("outer promise"); // 2
