@@ -1,11 +1,13 @@
 const condition = 'match';
 
 var promise = new Promise(function (resolve, reject) {
-  if (condition === 'match') {
-    resolve('done');
-  } else {
-    reject('been reject');
-  }
+  setTimeout(function () {
+    if (condition === 'match') {
+      resolve('done');
+    } else {
+      reject('been reject');
+    }
+  }, 2000);
 });
 
 promise.then(function (value) {
