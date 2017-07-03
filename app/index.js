@@ -1,15 +1,19 @@
-const condition = 'no';
+const condition = 'match';
 
 var promise = new Promise(function (resolve, reject) {
   if (condition === 'match') {
     resolve('done');
   } else {
-    reject(new Error('been reject'));
+    reject('been reject');
   }
-
 });
+
 promise.then(function (value) {
-  console.log(value);
-}).catch(function (error) {
-  console.error(error);
+  var messageEle = document.getElementById('message');
+  messageEle.style.color = 'green';
+  messageEle.innerText = value;
+}).catch(function (errorMessage) {
+  var messageEle = document.getElementById('message');
+  messageEle.style.color = 'red';
+  messageEle.innerText = errorMessage;
 });
