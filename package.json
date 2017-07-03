@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "git@github.com:benweizhu/es6-promise-workshop.git",
   "author": "benweizhu <benweizhu@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.6.2",
+    "serve-static": "^1.12.3"
+  },
+  "scripts": {
+    "server": "node server.js"
+  }
 }
