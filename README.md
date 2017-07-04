@@ -1,4 +1,4 @@
-# promise-workshop
+# es6 promise workshop
 
 For slides
 
