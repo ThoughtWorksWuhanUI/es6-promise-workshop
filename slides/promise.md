@@ -60,11 +60,23 @@ promise.then(function (value) {
 ```
 
 [slide]
+# Promise是异步操作 {:&.flexbox.vleft}
 
-# 样式展示 {:&.flexbox.vleft}
-> nodeppt 让每个人都爱上做分享！
+```
+var promise = new Promise(function (resolve) {
+  console.log("inner promise");
+  resolve('resolve promise');
+});
 
+promise.then(function (value) {
+  console.log(value);
+});
 
+console.log("outer promise");
+
+```
+哪部分是异步操作？
+[Have a look at the event Loop](http://latentflip.com/loupe/?code=dmFyIHByb21pc2UgPSBuZXcgUHJvbWlzZShmdW5jdGlvbiAocmVzb2x2ZSkgewogIGNvbnNvbGUubG9nKCJpbm5lciBwcm9taXNlIik7CiAgcmVzb2x2ZSgncmVzb2x2ZSBwcm9taXNlJyk7Cn0pOwoKcHJvbWlzZS50aGVuKGZ1bmN0aW9uICh2YWx1ZSkgewogIGNvbnNvbGUubG9nKHZhbHVlKTsKfSk7Cgpjb25zb2xlLmxvZygib3V0ZXIgcHJvbWlzZSIpOw%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D "Title")
 
 [slide]
 ## 基本语法指南
