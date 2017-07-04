@@ -15,7 +15,7 @@ usemathjax: yes
 * ##异步操作 {:&.rollIn}
 [slide]
 # ES6 Promise语法
-```
+```javascript
 var promise = new Promise(function (resolve) {
   resolve(42);
 });
@@ -23,7 +23,7 @@ promise.then(function (value) {
   console.log(value);
 });
 ```
-```
+```javascript
 var promise = new Promise(function (resolve, reject) {
   reject(new Error('error'));
 });
@@ -32,7 +32,14 @@ promise.catch(function (error) {
 });
 ```
 [slide]
+```javascript
+function matchCondition(condition) {
+  return condition === 'promise';
+}
 ```
+Checkout to basic branch
+[slide]
+```javascript
 const condition = 'promise';
 
 function matchCondition(condition) {
@@ -62,7 +69,7 @@ promise.then(function (value) {
 [slide]
 # Promise是异步操作 {:&.flexbox.vleft}
 
-```
+```javascript
 var promise = new Promise(function (resolve) {
   console.log("inner promise");
   resolve('resolve promise');
@@ -82,7 +89,7 @@ console.log("outer promise");
 
 # Promise的网络请求 {:&.flexbox.vleft}
 
-```
+```javascript
 function fetchData(URL) {
   ...
 }
@@ -100,7 +107,7 @@ promise.then(function (responseText) {
 完成中间省略的部分
 [slide]
 # XHR {:&.flexbox.vleft}
-```
+```javascript
 var req = new XMLHttpRequest();
 req.open('GET', URL, true);
 req.onload = function () {
@@ -115,18 +122,63 @@ req.onerror = function () {
 };
 req.send();
 ```
-[slide style="background-image:url('/img/bg1.png')"]
+[slide]
+checkout to step3 see the result
+[slide]
+# Promise Chain {:&.flexbox.vleft}
+```javascript
+function increment(value) { return value + 1; }
+function output(value) { console.log(value); }
+/**  1 + 1 = 2 **/
 
-# 支持添加背景图片 {:&.flexbox.vleft}
+var promise = Promise.resolve(1);
 
-使用方法：&#91;slide style="background-image:url('/img/bg1.png')"&#93;
+promise
+  .then(increment)
+  .then(output);
+```
+不管是 then 还是 catch 方法调用，都返回了一个新的promise对象
 
-完全style写法，更加灵活，视频背景、repeat背景更不在话下
+问题：( 1 + 1 ) * 2 = 4
+[slide]
+
+# Promise Chain {:&.flexbox.vleft}
+```javascript
+function doubleUp(value) { return value * 2; }
+function increment(value) { return value + 1; }
+function output(value) { console.log(value); }
+/** ( 1 + 1 ) * 2 = 4 **/
+
+var promise = Promise.resolve(1);
+
+promise
+  .then(increment)
+  .then(doubleUp)
+  .then(output);
+```
 
 [slide]
-## 使用LaTex公式：
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}.    s = ut + \frac{1}{2}at^2 $$
-矩阵：\\( x = {\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \end{bmatrix}}  \\)
+# Chaining Request {:&.flexbox.vleft}
+
+https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/books.json
+
+```json
+[
+  {
+    "id": 1,
+    "name": "《重构 改善既有代码的设计》",
+    "price": 100,
+    "url": "https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/refactoring.json"
+  },
+  {
+    "id": 2,
+    "name": "《JavaScript编程精粹》",
+    "price": 100,
+    "url": "https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/javascript-the-good-parts.json"
+  }
+]
+
+```
 
 [slide]
 ## 支持.class/#id/自定义属性样式

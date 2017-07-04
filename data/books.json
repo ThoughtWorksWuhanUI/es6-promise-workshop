@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "《重构》",
+    "name": "《重构 改善既有代码的设计》",
     "price": 100,
     "url": "https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/refactoring.json"
   },
