@@ -3,12 +3,12 @@
     "id": 1,
     "name": "《重构》",
     "price": 100,
-    "url": ""
+    "url": "https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/refactoring.json"
   },
   {
     "id": 2,
     "name": "《JavaScript编程精粹》",
     "price": 100,
-    "url": ""
+    "url": "https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/javascript-the-good-parts.json"
   }
 ]
