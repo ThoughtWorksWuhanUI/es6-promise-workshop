@@ -98,7 +98,23 @@ promise.then(function (responseText) {
 })
 ```
 完成中间省略的部分
-
+[slide]
+# XHR {:&.flexbox.vleft}
+```
+var req = new XMLHttpRequest();
+req.open('GET', URL, true);
+req.onload = function () {
+  if (req.status === 200) {
+    console.log(req.responseText);
+  } else {
+    console.log(req.statusText);
+  }
+};
+req.onerror = function () {
+  console.log(req.statusText);
+};
+req.send();
+```
 [slide style="background-image:url('/img/bg1.png')"]
 
 # 支持添加背景图片 {:&.flexbox.vleft}
