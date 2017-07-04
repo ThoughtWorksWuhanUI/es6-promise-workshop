@@ -79,30 +79,25 @@ console.log("outer promise");
 [Have a look at the event Loop](http://latentflip.com/loupe/?code=dmFyIHByb21pc2UgPSBuZXcgUHJvbWlzZShmdW5jdGlvbiAocmVzb2x2ZSkgewogIGNvbnNvbGUubG9nKCJpbm5lciBwcm9taXNlIik7CiAgcmVzb2x2ZSgncmVzb2x2ZSBwcm9taXNlJyk7Cn0pOwoKcHJvbWlzZS50aGVuKGZ1bmN0aW9uICh2YWx1ZSkgewogIGNvbnNvbGUubG9nKHZhbHVlKTsKfSk7Cgpjb25zb2xlLmxvZygib3V0ZXIgcHJvbWlzZSIpOw%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D "Title")
 
 [slide]
-## 基本语法指南
-----
 
-<pre><code class="markdown">/* 先写总的配置 */
-title: 这是title，网页名称
-speaker: 演讲者名称
-url: https://github.com/ksky521/nodeppt
-transition: 全局转场动效
-files: 引入的js和css文件，多个以半角逗号隔开
-theme: 皮肤样式
-highlightStyle: 代码高亮样式，默认monokai_sublime
-usemathjax: yes 启用MathJax渲染公式
+# Promise的网络请求 {:&.flexbox.vleft}
 
-/* 以&#91;slide&#93; 隔开每个ppt页面 */
-&#91;slide&#93;
-## 二级标题
-这里写内容即可
+```
+function fetchData(URL) {
+  ...
+}
 
-&#91;slide&#93;
-...
-</code>
-</pre>
+var promise = fetchData('https://raw.githubusercontent.com/benweizhu/es6-promi
+se-workshop/master/data/books.json');
 
-
+promise.then(function (responseText) {
+  document.getElementById('json').innerHTML = responseText;
+  console.log(JSON.parse(responseText))
+}).catch(function (error) {
+  console.log(error)
+})
+```
+完成中间省略的部分
 
 [slide style="background-image:url('/img/bg1.png')"]
 
