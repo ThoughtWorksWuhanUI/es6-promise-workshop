@@ -142,7 +142,7 @@ promise
 问题：( 1 + 1 ) * 2 = 4
 [slide]
 
-# Promise Chain {:&.flexbox.vleft}
+# 问题：( 1 + 1 ) * 2 = 4 {:&.flexbox.vleft}
 ```javascript
 function doubleUp(value) { return value * 2; }
 function increment(value) { return value + 1; }
@@ -179,30 +179,29 @@ https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/master/data/boo
 ]
 
 ```
-
 [slide]
-## 支持.class/#id/自定义属性样式
-----
+# 在then中返回一个promise  {:&.flexbox.vleft}
 
-```html
-使用：.class{:.class}
-使用：#id{:#id}
-组合使用：{:.class.class2 width="200px"}
-父元素样式使用&：{:&.class}
+* 如果你返回类似于promise的内容，下一个then()则会等待，并仅在promise产生结果（成功/失败）时调用 {:&.rollIn}
+[slide]
+
+# 在then中返回一个promise  {:&.flexbox.vleft}
+```javascript
+function resolveAfterTime(num, time) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(num);
+    }, time)
+  });
+}
+
+resolveAfterTime(10, 1000).then(function (value) {
+  console.log(value)
+  return resolveAfterTime(value + 10, 5000);
+}).then(function (value) {
+  console.log(value)
+});
 ```
-
-[slide]
-
-## 主页面样式
-### ----是上下分界线
-----
-
-nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT
-
-nodeppt：https://github.com/ksky521/nodeppt
-
-
-
 [slide]
 ## 表格示例
 ### 市面上主要的css预处理器：Less\Sass\Stylus
