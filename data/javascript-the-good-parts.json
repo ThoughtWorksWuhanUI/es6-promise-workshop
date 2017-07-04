@@ -1,6 +1,7 @@
 {
   "id": 2,
   "name": "《JavaScript语言精粹》",
+  "imageUrl": "https://img3.doubanio.com/lpic/s3651235.jpg",
   "description": "本书通过对JavaScript语言的分析，甄别出好的和坏的特性，从而提取出相对这门语言的整体而言具有更好的可靠性、可读性和可维护性的JavaScript的子集，以便你能用它创建真正可扩展的和高效的代码。雅虎资深JavaScript架构师Douglas Crockford倾力之作。向读者介绍如何运用JavaScript创建真正可扩展的和高效的代码。"
 }
 
