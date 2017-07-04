@@ -33,10 +33,14 @@ promise.catch(function (error) {
 ```
 [slide]
 ```
-const condition = 'match';
+const condition = 'promise';
+
+function matchCondition(condition) {
+  return condition === 'promise';
+}
 
 var promise = new Promise(function (resolve, reject) {
-  if (condition === 'match') {
+  if (matchCondition(condition)) {
     resolve('done');
   } else {
     reject('been reject');
@@ -52,6 +56,7 @@ promise.then(function (value) {
   messageEle.style.color = 'red';
   messageEle.innerText = errorMessage;
 });
+
 ```
 
 [slide]
