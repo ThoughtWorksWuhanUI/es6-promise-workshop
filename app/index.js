@@ -27,7 +27,8 @@ fetchData("https://raw.githubusercontent.com/benweizhu/es6-promise-workshop/mast
   .then(function (bookDetailsList) {
     bookDetailsList.forEach(function (bookDetails) {
       var img = document.createElement("img");
-      img.src = bookDetails.imageUrl;
+      img.src = JSON.parse(bookDetails).imageUrl;
+      document.body.appendChild(img);
     });
   })
   .catch(function (error) {
