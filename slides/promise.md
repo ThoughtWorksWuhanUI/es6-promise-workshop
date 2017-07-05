@@ -39,6 +39,8 @@ var user = userService.getUser(1); //返回一个Promise
 user.username; ?????? undefined ??????
 ```
 [slide]
+# Promise是一个JavaScript对象
+[slide]
 # ES6 Promise语法
 ```javascript
 var promise = new Promise(function (resolve) {
