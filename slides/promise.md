@@ -12,7 +12,32 @@ usemathjax: yes
 [slide]
 # 什么是Promise？ Promise用来做什么？
 ----
-* ##异步操作 {:&.rollIn}
+* #异步操作 {:&.rollIn}
+[slide]
+# 习惯了jQuery的回调 {:&.flexbox.vleft}
+```javascript
+$.ajax({
+  url: '/user',
+  data: { id: 1 },
+  success: function (data) {
+    console.log(data)
+  },
+  dataType: 'json'
+});
+```
+# 习惯同步的Get方法
+```java
+//Java
+User user = userService.getUser(1);
+user.getUsername();
+```
+[slide]
+# 当有一天 {:&.flexbox.vleft}
+```javascript
+//JavaScript
+var user = userService.getUser(1); //返回一个Promise
+user.username; ?????? undefined ??????
+```
 [slide]
 # ES6 Promise语法
 ```javascript
