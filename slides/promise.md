@@ -41,7 +41,15 @@ user.username; ?????? undefined ??????
 [slide]
 # Promise是一个JavaScript对象
 [slide]
-# ES6 Promise语法
+# ES6 Promise语法 - new Promise
+```javascript
+var promise = new Promise(function (resolve, reject) {
+  // 业务代码
+  // 执行结果：两种状态
+});
+```
+[slide]
+# ES6 Promise语法 - resolve
 ```javascript
 var promise = new Promise(function (resolve) {
   resolve(42);
@@ -50,6 +58,8 @@ promise.then(function (value) {
   console.log(value);
 });
 ```
+[slide]
+# ES6 Promise语法 - reject
 ```javascript
 var promise = new Promise(function (resolve, reject) {
   reject(new Error('error'));
