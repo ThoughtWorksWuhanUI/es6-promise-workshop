@@ -13,6 +13,10 @@ usemathjax: yes
 # 什么是Promise？ Promise用来做什么？
 [slide]
 # 异步操作
+-----
+* User interaction(mouse, keyboard, etc)
+* AJAX
+* Timers ...
 [slide]
 # 习惯了jQuery的回调 {:&.flexbox.vleft}
 ```javascript
