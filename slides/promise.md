@@ -11,8 +11,8 @@ usemathjax: yes
 ## 一步步用会Promise
 [slide]
 # 什么是Promise？ Promise用来做什么？
-----
-* #异步操作 {:&.rollIn}
+[slide]
+# 异步操作
 [slide]
 # 习惯了jQuery的回调 {:&.flexbox.vleft}
 ```javascript
@@ -93,6 +93,7 @@ function success(condition) {
 ```
 Checkout to basic branch
 [slide]
+Checkout to step1 branch
 ```javascript
 const condition = 'promise';
 
@@ -135,6 +136,7 @@ console.log("outer promise");
 哪部分是异步操作？
 [Have a look at the event Loop](http://latentflip.com/loupe/?code=dmFyIHByb21pc2UgPSBuZXcgUHJvbWlzZShmdW5jdGlvbiAocmVzb2x2ZSkgewogIGNvbnNvbGUubG9nKCJpbm5lciBwcm9taXNlIik7CiAgcmVzb2x2ZSgncmVzb2x2ZSBwcm9taXNlJyk7Cn0pOwoKcHJvbWlzZS50aGVuKGZ1bmN0aW9uICh2YWx1ZSkgewogIGNvbnNvbGUubG9nKHZhbHVlKTsKfSk7Cgpjb25zb2xlLmxvZygib3V0ZXIgcHJvbWlzZSIpOw%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D "Title")
 
+Checkout to step1-1 branch
 [slide]
 
 # Promise的网络请求 {:&.flexbox.vleft}

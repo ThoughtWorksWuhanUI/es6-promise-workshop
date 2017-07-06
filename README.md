@@ -1,4 +1,13 @@
 # es6 promise workshop
+For run server
+```
+npm install
+npm run server
+
+yarn
+yarn server
+```
+
 
 For slides
 
