@@ -1,10 +1,10 @@
 const condition = 'promise';
 
-function matchCondition(condition) {
+function success(condition) {
   return condition === 'promise';
 }
 var promise = new Promise(function (resolve, reject) {
-  if (matchCondition(condition)) {
+  if (success(condition)) {
     resolve('done');
   } else {
     reject('been reject');
