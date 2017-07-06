@@ -84,10 +84,10 @@ promise.catch(function (error) {
 
 # 练习
 
-创建一个Promise，并在业务代码中，调用matchCondition，当满足条件时，resolve，反之reject
+创建一个Promise，并在业务代码中调用success
 
 ```javascript
-function matchCondition(condition) {
+function success(condition) {
   return condition === 'promise';
 }
 ```
@@ -96,12 +96,12 @@ Checkout to basic branch
 ```javascript
 const condition = 'promise';
 
-function matchCondition(condition) {
+function success(condition) {
   return condition === 'promise';
 }
 
 var promise = new Promise(function (resolve, reject) {
-  if (matchCondition(condition)) {
+  if (success(condition)) {
     resolve('done');
   } else {
     reject('been reject');
@@ -109,13 +109,9 @@ var promise = new Promise(function (resolve, reject) {
 });
 
 promise.then(function (value) {
-  var messageEle = document.getElementById('message');
-  messageEle.style.color = 'green';
-  messageEle.innerText = value;
+  console.log(value);
 }).catch(function (errorMessage) {
-  var messageEle = document.getElementById('message');
-  messageEle.style.color = 'red';
-  messageEle.innerText = errorMessage;
+  console.log(errorMessage)
 });
 
 ```
