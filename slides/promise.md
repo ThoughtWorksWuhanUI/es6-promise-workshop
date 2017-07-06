@@ -45,30 +45,47 @@ user.username; ?????? undefined ??????
 ```javascript
 var promise = new Promise(function (resolve, reject) {
   // 业务代码
-  // 执行结果：两种状态
 });
 ```
 [slide]
-# ES6 Promise语法 - resolve
+```javascript
+var promise = new Promise(function (resolve, reject) {
+  // 业务代码
+});
+```
+### Promise中业务代码的执行有两个结果：
+
+<div style="margin-top: 10px">
+  <span style="color: green">成功（resolve）</span>或者 <span style="color: red">失败（reject）</span>
+</div>
+[slide]
+# <span style="color: green">成功（resolve）</span>
+
 ```javascript
 var promise = new Promise(function (resolve) {
-  resolve(42);
+  resolve(42); // pass 42 to then cb
 });
 promise.then(function (value) {
   console.log(value);
 });
 ```
 [slide]
-# ES6 Promise语法 - reject
+# <span style="color: red">失败（reject）</span>
+
 ```javascript
 var promise = new Promise(function (resolve, reject) {
-  reject(new Error('error'));
+  reject(new Error('error')); // pass Error obj to catch cb
 });
 promise.catch(function (error) {
   console.log(error);
 });
 ```
 [slide]
+
+# 练习
+
+创建一个Promise，并在业务代码中，调用matchCondition，当满足条件时，resolve，反之reject
+
 ```javascript
 function matchCondition(condition) {
   return condition === 'promise';
