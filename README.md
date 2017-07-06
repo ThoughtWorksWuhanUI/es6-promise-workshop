@@ -1,5 +1,6 @@
 # es6 promise workshop
-For run server
+
+For coding and run server
 ```
 npm install
 npm run server
@@ -8,9 +9,7 @@ yarn
 yarn server
 ```
 
-
 For slides
-
 ```
 cd slides
 npm install -g nodeppt
